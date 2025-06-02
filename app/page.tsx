@@ -120,7 +120,7 @@ export default function Home() {
     <div className={styles.page}>
       <section ref={sections[0].ref} id="hero" className={styles.hero}>
         <img src="images/LogoLN.png" alt="Logo" />
-        <h1>LEONARDO NASCIMENTO</h1>
+        <h1>LEONARDO DO NASCIMENTO</h1>
         <p>A razão para alcançar o impensável</p>
         <div className={styles.cta}>
           <Button variant="primary" size="large" onClick={() => scrollToSection('services')}>
@@ -143,7 +143,7 @@ export default function Home() {
         <Card className={styles.bio}>
           <h3>Minha História</h3>
           <p>
-            Sou Leonardo Nascimento, Técnico em Informática para Internet pelo IFMS e atualmente graduando em Sistemas de Informação pela UFGD. Atuo no Exército Brasileiro, onde realizo suporte técnico, manutenção, montagem, formatação de computadores e desenvolvimento Full Stack.
+            Sou Leonardo do Nascimento, Técnico em Informática para Internet pelo IFMS e atualmente graduando em Sistemas de Informação pela UFGD. Atuo no Exército Brasileiro, onde realizo suporte técnico, manutenção, montagem, formatação de computadores e desenvolvimento Full Stack.
           </p>
           <p>
             No desenvolvimento, trabalho com uma stack diversificada que inclui Front-End com JavaScript, TypeScript, React, Next.js, Tailwind CSS e Bootstrap; Back-End com Python (Django) e Node.js; além de práticas DevOps utilizando Git e GitHub. Também aplico conhecimentos em design e UI/UX com ferramentas como Figma, Photoshop e Illustrator.

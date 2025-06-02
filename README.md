@@ -1,4 +1,4 @@
-# Portfólio Profissional - Leonardo Nascimento
+# Portfólio Profissional - Leonardo do Nascimento
 
 ## 📋 Sobre o Projeto
 
@@ -200,7 +200,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📧 Contato
 
-Leonardo Nascimento - leonardovitaldonascimento@gmail.com
+Leonardo do Nascimento - leonardovitaldonascimento@gmail.com
 
-LinkedIn: [Leonardo Nascimento](https://www.linkedin.com/in/leonardo-vital-do-nascimento-6b682622a/)
+LinkedIn: [Leonardo do Nascimento](https://www.linkedin.com/in/leonardo-vital-do-nascimento-6b682622a/)
 GitHub: [LeonardoNascimento23](https://github.com/LeonardoNascimento23)

@@ -19,7 +19,7 @@ const saira = Saira({
 });
 
 export const metadata: Metadata = {
-  title: "LEONARDO NASCIMENTO",
+  title: "LEONARDO DO NASCIMENTO",
   description: "Portfólio de um desenvolvedor full stack especializado em criar soluções digitais inovadoras.",
 };
 

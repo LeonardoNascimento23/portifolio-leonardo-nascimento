@@ -39,7 +39,7 @@ export function ContactForm() {
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_name: 'Leonardo Nascimento',
+          to_name: 'Leonardo do Nascimento',
           to_email: 'leonardovitaldonascimento@gmail.com'
         },
         'YOUR_PUBLIC_KEY' // Substitua pela sua Public Key do EmailJS
