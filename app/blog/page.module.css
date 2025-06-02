@@ -1,0 +1,149 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #007bff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.featuredPost {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featuredPost:hover .imageContainer img {
+  transform: scale(1.05);
+}
+
+.postContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.category {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.date {
+  color: #666;
+}
+
+.featuredPost h2 {
+  font-size: 2rem;
+  color: #333;
+  line-height: 1.2;
+}
+
+.featuredPost p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.postCard .imageContainer {
+  height: 200px;
+}
+
+.postCard h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 1rem 0;
+}
+
+.postCard p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.readTime {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .featuredPost {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredPost h2 {
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+} 

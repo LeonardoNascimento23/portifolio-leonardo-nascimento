@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+/* Base styles */
+.spacer {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Gradient overlays */
+.spacer::before,
+.spacer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spacer::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 20%,
+    rgba(0, 0, 0, 0.3) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.spacer::after {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 20%,
+    rgba(0, 0, 0, 0.3) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Visibility states */
+.spacer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text container */
+.textContainer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spacer.visible .textContainer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typing text */
+.text {
+  font-family: 'Audiowide', cursive;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ffffff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.text.typing {
+  opacity: 1;
+  transform: translateY(0);
+  animation: typing 2s steps(20, end),
+             blink-caret 0.75s step-end infinite;
+}
+
+/* Animations */
+@keyframes typing {
+  from { 
+    width: 0;
+    opacity: 0;
+  }
+  to { 
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ffffff }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(77, 106, 42, 0.4),
+                 0 0 20px rgba(77, 106, 42, 0.2),
+                 0 0 30px rgba(77, 106, 42, 0.1);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(77, 106, 42, 0.6),
+                 0 0 30px rgba(77, 106, 42, 0.4),
+                 0 0 40px rgba(77, 106, 42, 0.2);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.parallaxContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  
+  .parallaxContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .floatingElement {
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.3;
+  }
+  
+  .floatingElement:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+  
+  .floatingElement:nth-child(2) {
+    top: 60%;
+    left: 70%;
+    animation-delay: -2s;
+  }
+  
+  .floatingElement:nth-child(3) {
+    top: 40%;
+    left: 50%;
+    animation-delay: -4s;
+  }
+  
+  .light {
+    background: linear-gradient(180deg, rgba(77, 106, 42, 0.1) 0%, rgba(77, 106, 42, 0) 100%);
+  }
+  
+  .dark {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+    }
+  }
+  
+  /* Efeito parallax no scroll */
+  .parallaxContent {
+    transform: translateY(var(--scroll-offset, 0));
+    transition: transform 0.1s linear;
+  }

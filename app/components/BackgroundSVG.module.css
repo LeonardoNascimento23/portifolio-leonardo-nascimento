@@ -1,0 +1,64 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+.svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  width: 100%;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.wave {
+  fill: none;
+  stroke: #4D6A2A;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  opacity: 0.4;
+  stroke-dasharray: 3700;
+  animation: dash 6s ease-out forwards, pulse 2s ease-in-out infinite alternate;
+}
+
+.wave:nth-child(1) { animation-duration: 6s, 2s; animation-delay: 0s, 0s; }
+.wave:nth-child(2) { animation-duration: 6.2s, 2s; animation-delay: 0.2s, 0.2s; }
+.wave:nth-child(3) { animation-duration: 6.4s, 2s; animation-delay: 0.4s, 0.4s; }
+.wave:nth-child(4) { animation-duration: 6.6s, 2s; animation-delay: 0.6s, 0.6s; }
+.wave:nth-child(5) { animation-duration: 6.8s, 2s; animation-delay: 0.8s, 0.8s; }
+.wave:nth-child(6) { animation-duration: 7s, 2s; animation-delay: 1s, 1s; }
+.wave:nth-child(7) { animation-duration: 7.2s, 2s; animation-delay: 1.2s, 1.2s; }
+.wave:nth-child(8) { animation-duration: 7.4s, 2s; animation-delay: 1.4s, 1.4s; }
+.wave:nth-child(9) { animation-duration: 7.6s, 2s; animation-delay: 1.6s, 1.6s; }
+.wave:nth-child(10) { animation-duration: 7.8s, 2s; animation-delay: 1.8s, 1.8s; }
+.wave:nth-child(11) { animation-duration: 8s, 2s; animation-delay: 2s, 2s; }
+.wave:nth-child(12) { animation-duration: 8.2s, 2s; animation-delay: 2.2s, 2.2s; }
+.wave:nth-child(13) { animation-duration: 8.4s, 2s; animation-delay: 2.4s, 2.4s; }
+.wave:nth-child(14) { animation-duration: 8.6s, 2s; animation-delay: 2.6s, 2.6s; }
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: -3700;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.2;
+  }
+}

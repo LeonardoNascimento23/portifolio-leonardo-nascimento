@@ -1,0 +1,45 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  animation: float 4s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0.9) invert(1);
+  transition: all 0.5s ease;
+}
+
+.iconWrapper:hover .icon {
+  filter: brightness(1) invert(1);
+  transform: scale(1.2);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+} 
