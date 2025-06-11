@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           <h3>Informações de Contato</h3>
           <div className={styles.contactInfo}>
             <div className={styles.infoItem}>
-              <span className={styles.icon}>📧</span>
+              <FaEnvelope size={24} />
               <div>
                 <h4>Email</h4>
                 <p>leonardovitaldonascimento@gmail.com</p>
@@ -16,7 +17,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.infoItem}>
-              <span className={styles.icon}>📱</span>
+              <FaPhone size={24} />
               <div>
                 <h4>Telefone</h4>
                 <p>+55 (67) 98207-0567</p>
@@ -24,7 +25,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.infoItem}>
-              <span className={styles.icon}>📍</span>
+              <FaMapMarkerAlt size={24} />
               <div>
                 <h4>Localização</h4>
                 <p>Dourados, MS - Brasil</p>
@@ -37,10 +38,10 @@ export default function Footer() {
           <h3>Redes Sociais</h3>
           <div className={styles.socialLinks}>
             <a href="https://www.linkedin.com/in/leonardo-vital-do-nascimento-6b682622a/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
+              <FaLinkedin size={24} />
             </a>
             <a href="https://github.com/LeonardoNascimento23" target="_blank" rel="noopener noreferrer">
-              GitHub
+              <FaGithub size={24} />
             </a>
           </div>
         </div>

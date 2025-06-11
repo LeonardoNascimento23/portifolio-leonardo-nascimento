@@ -205,8 +205,13 @@ export default function Home() {
         <div className={styles.grid}>
           {projects.map((project) => (
             <Card key={project.id} className={styles.projectCard}>
-              <div className={styles.imageContainer}>
-                <img src={project.image} alt={project.title} />
+              <div className={styles.iframeContainer}>
+                <iframe 
+                  src={project.link}
+                  title={project.title}
+                  className={styles.projectIframe}
+                  loading="lazy"
+                />
               </div>
               <div className={styles.content}>
                 <h3>{project.title}</h3>
@@ -275,28 +280,6 @@ export default function Home() {
           <Card className={styles.formCard}>
             <ContactForm />
           </Card>
-        </div>
-        <div className={styles.contactInfo}>
-          <div className={styles.infoItem}>
-            <FaEnvelope size={24} />
-            <span>{contactInfo.email}</span>
-          </div>
-          <div className={styles.infoItem}>
-            <FaPhone size={24} />
-            <span>{contactInfo.phone}</span>
-          </div>
-          <div className={styles.infoItem}>
-            <FaMapMarkerAlt size={24} />
-            <span>{contactInfo.location}</span>
-          </div>
-          <div className={styles.socialLinks}>
-            <a href={contactInfo.social.linkedin} target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={24} />
-            </a>
-            <a href={contactInfo.social.github} target="_blank" rel="noopener noreferrer">
-              <FaGithub size={24} />
-            </a>
-          </div>
         </div>
       </section>
     </div>
