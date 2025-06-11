@@ -23,7 +23,7 @@
 
 .secondary {
   background-color: black;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   color: white;
   box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5);
@@ -36,7 +36,7 @@
 .outline {
   background-color: transparent;
   box-shadow: 0 5px 25px #4d6a2a7d;
-  border: 1px solid #4D6A2A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   color: #4D6A2A;
 }

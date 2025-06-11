@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { Audiowide, Saira } from "next/font/google";
 import "./globals.css";
-import Nav from "./components/Nav";
-import BackgroundSVG from "./components/BackgroundSVG";
-import ParallaxProvider from "./components/ParallaxProvider";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 const audiowide = Audiowide({
   weight: '400',
@@ -19,22 +19,22 @@ const saira = Saira({
 });
 
 export const metadata: Metadata = {
-  title: "LEONARDO DO NASCIMENTO",
-  description: "Portfólio de um desenvolvedor full stack especializado em criar soluções digitais inovadoras.",
+  title: "Leonardo do Nascimento - Desenvolvedor Full Stack",
+  description: "Portfólio e serviços de desenvolvimento web e suporte técnico",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="pt-BR" className={`${saira.className} ${audiowide.className}`} style={{ scrollBehavior: 'smooth' }}>
       <body>
-        <BackgroundSVG />
-        <ParallaxProvider>
-          {children}
-        </ParallaxProvider>
+        <Navbar />
+        {children}
+        <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

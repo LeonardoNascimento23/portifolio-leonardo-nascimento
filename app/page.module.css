@@ -12,6 +12,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: var(--font-saira);
+  position: relative;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -193,7 +194,7 @@ a.secondary {
 .contact h2 {
   font-family: 'Audiowide', cursive;
   color: white;
-  text-shadow: 5px 0 25px white;
+  text-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
   font-size: 4rem;
   margin-bottom: 1rem;
   opacity: 0;
@@ -222,7 +223,6 @@ a.secondary {
 .socialLinks a {
   font-family: var(--font-saira);
   color: rgb(255, 255, 255);
-  text-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
   font-size: 1.5rem;
   margin-bottom: 2rem;
   opacity: 0;
@@ -421,8 +421,7 @@ color: white;
 .projectCard {
   background: rgba(0, 0, 0, 0.5);;
   backdrop-filter: blur(10px);
-  box-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -493,128 +492,106 @@ color: white;
 }
 
 .services {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
-  color: white;
-  padding-top: 8rem;
+  padding: 4rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .services h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
-color: white;
+  color: white;
+  text-align: center;
 }
 
 .services p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: white;
+  text-align: center;
+}
+
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.digitalService {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .serviceCard {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  box-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  text-align: left;
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 16px;
   transition: transform 0.3s ease;
-  max-width: 800px;
-  margin: 0 auto;
+  height: 100%;
 }
 
 .serviceCard:hover {
   transform: translateY(-5px);
 }
 
-.serviceCard button {
-  font-family: var(--font-saira);
+.serviceCard .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .serviceCard h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: white;
-  text-align: center;
 }
 
 .serviceCard p {
   color: white;
   margin-bottom: 1.5rem;
-  text-align: center;
-  font-size: 1.2rem;
+  text-align: left;
 }
 
 .features {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
+  margin: 0;
 }
 
 .features li {
-  padding: 0.75rem 0;
   color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 1.1rem;
-  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
 }
 
-.features li:last-child {
-  border-bottom: none;
-}
-
-.icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  display: block;
-}
-
-.store {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-  color: white;
-  padding-top: 8rem;
-}
-
-.store h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-color: white;
-}
-
-.store p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: white;
-}
-
-.productCard {
-  background: rgba(0, 0, 0, 0.5);;
-  backdrop-filter: blur(10px);
-  box-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.productCard:hover {
-  transform: translateY(-5px);
-}
-
-.productCard button {
-  font-family: var(--font-saira);
-}
-
-.category {
+.features li::before {
+  content: "•";
+  color: #4D6A2A;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(0, 123, 255, 0.9);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
+  left: 0;
 }
 
 .productContent {
@@ -645,36 +622,45 @@ color: white;
 }
 
 .contact {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
-  color: white;
-  padding-top: 8rem;
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .contact h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: white;
+  text-align: center;
 }
 
 .contact p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: white;
+  text-align: center;
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .formCard {
   background: rgba(0, 0, 0, 0.5);;
   backdrop-filter: blur(10px);
-  box-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 1rem;
 }
@@ -715,8 +701,7 @@ color: white;
 .infoCard {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  box-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 1rem;
 }
@@ -730,24 +715,22 @@ color: white;
 .contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
 }
 
 .infoItem {
   display: flex;
   align-items: center;
   gap: 1rem;
+  color: var(--text-color);
 }
 
-.infoItem h4 {
-  color: white;
-  margin-bottom: 0.25rem;
-}
-
-.infoItem p {
-  color: white;
-  margin: 0;
+.infoItem svg {
+  color: var(--primary-color);
 }
 
 .social h4 {
@@ -757,17 +740,36 @@ color: white;
 
 .socialLinks {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .socialLinks a {
-  color: white;
-  text-decoration: none;
+  color: var(--text-color);
   transition: color 0.3s ease;
 }
 
 .socialLinks a:hover {
-  color: #f2f2f281
+  color: var(--primary-color);
+}
+
+.skillGrid ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skillGrid ul li svg {
+  color: var(--primary-color);
+}
+
+.serviceCard .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
@@ -827,4 +829,19 @@ color: white;
 .formGroup textarea,
 .formGroup select {
   font-family: var(--font-saira) !important;
+}
+
+@media (max-width: 1024px) {
+  .serviceContent {
+    padding: 0 1rem;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .digitalService {
+    max-width: 100%;
+  }
 }

@@ -7,6 +7,9 @@ import styles from './page.module.css';
 import { ParallaxSpacer } from './components/ParallaxSpacer';
 import TechIcons from './components/TechIcons';
 import { ContactForm } from './components/ContactForm';
+import { DigitalServiceForm } from './components/DigitalServiceForm';
+import { FaLaptopCode, FaGlobe, FaTools, FaCode, FaServer, FaGitAlt, FaFigma, FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiBootstrap, SiPython, SiDjango, SiNodedotjs } from 'react-icons/si';
 
 // Dados estáticos
 const projects = [
@@ -36,7 +39,7 @@ const services = [
       'Configuração de redes',
       'Atendimento personalizado'
     ],
-    icon: '💻',
+    icon: <FaLaptopCode size={40} />,
   },
   {
     id: 2,
@@ -50,7 +53,7 @@ const services = [
       'E-commerce',
       'Site Institucional'
     ],
-    icon: '🌐',
+    icon: <FaGlobe size={40} />,
   }
 ];
 
@@ -150,40 +153,40 @@ export default function Home() {
           </p>
         </Card>
         <div className={styles.skills}>
-          <h2>🛠️ Dev Stack para Desenvolvimento Web</h2>
+          <h2><FaTools size={30} /> Dev Stack para Desenvolvimento Web</h2>
           <p>Essas são as ferramentas e tecnologias que utilizo no meu dia a dia como desenvolvedor Full Stack:</p>
           <div className={styles.skillGrid}>
             <Card>
-              <h3>Front-End</h3>
+              <h3><FaCode size={24} /> Front-End</h3>
               <ul>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Tailwind CSS</li>
-                <li>Bootstrap</li>
+                <li><SiJavascript size={20} /> JavaScript</li>
+                <li><SiTypescript size={20} /> TypeScript</li>
+                <li><SiReact size={20} /> React</li>
+                <li><SiNextdotjs size={20} /> Next.js</li>
+                <li><SiTailwindcss size={20} /> Tailwind CSS</li>
+                <li><SiBootstrap size={20} /> Bootstrap</li>
               </ul>
             </Card>
             <Card>
-              <h3>Back-End</h3>
+              <h3><FaServer size={24} /> Back-End</h3>
               <ul>
-                <li>Python com Django</li>
-                <li>Node.js</li>
+                <li><SiPython size={20} /> Python com Django</li>
+                <li><SiNodedotjs size={20} /> Node.js</li>
               </ul>
             </Card>
             <Card>
-              <h3>DevOps</h3>
+              <h3><FaGitAlt size={24} /> DevOps</h3>
               <ul>
-                <li>Git</li>
-                <li>GitHub</li>
+                <li><FaGitAlt size={20} /> Git</li>
+                <li><FaGithub size={20} /> GitHub</li>
               </ul>
             </Card>
             <Card>
-              <h3>Design e UI/UX</h3>
+              <h3><FaFigma size={24} /> Design e UI/UX</h3>
               <ul>
-                <li>Figma</li>
-                <li>Photoshop</li>
-                <li>Illustrator</li>
+                <li><FaFigma size={20} /> Figma</li>
+                <li><FaTools size={20} /> Photoshop</li>
+                <li><FaTools size={20} /> Illustrator</li>
               </ul>
             </Card>
           </div>
@@ -237,19 +240,26 @@ export default function Home() {
       <section ref={sections[3].ref} id="services" className={styles.services}>
         <h2>Meus Serviços</h2>
         <p>Conheça as soluções que posso oferecer para seu negócio</p>
-        <div className={styles.grid}>
-          {services.map((service) => (
-            <Card key={service.id} className={styles.serviceCard}>
-              <div className={styles.icon}>{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <ul className={styles.features}>
-                {service.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-            </Card>
-          ))}
+        <div className={styles.serviceContent}>
+          <div className={styles.digitalService}>
+            <h3>Atendimento Digital</h3>
+            <p>Responda algumas perguntas rápidas para encontrarmos a melhor solução para você</p>
+            <DigitalServiceForm />
+          </div>
+          <div className={styles.serviceGrid}>
+            {services.map((service) => (
+              <Card key={service.id} className={styles.serviceCard}>
+                <div className={styles.icon}>{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <ul className={styles.features}>
+                  {service.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -265,47 +275,28 @@ export default function Home() {
           <Card className={styles.formCard}>
             <ContactForm />
           </Card>
-
-          <Card className={styles.infoCard}>
-            <h3>Informações de Contato</h3>
-            <div className={styles.contactInfo}>
-              <div className={styles.infoItem}>
-                <span className={styles.icon}>📧</span>
-                <div>
-                  <h4>Email</h4>
-                  <p>{contactInfo.email}</p>
-                </div>
-              </div>
-
-              <div className={styles.infoItem}>
-                <span className={styles.icon}>📱</span>
-                <div>
-                  <h4>Telefone</h4>
-                  <p>{contactInfo.phone}</p>
-                </div>
-              </div>
-
-              <div className={styles.infoItem}>
-                <span className={styles.icon}>📍</span>
-                <div>
-                  <h4>Localização</h4>
-                  <p>{contactInfo.location}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.social}>
-              <h4>Redes Sociais</h4>
-              <div className={styles.socialLinks}>
-                <a href={contactInfo.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-                <a href={contactInfo.social.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </Card>
+        </div>
+        <div className={styles.contactInfo}>
+          <div className={styles.infoItem}>
+            <FaEnvelope size={24} />
+            <span>{contactInfo.email}</span>
+          </div>
+          <div className={styles.infoItem}>
+            <FaPhone size={24} />
+            <span>{contactInfo.phone}</span>
+          </div>
+          <div className={styles.infoItem}>
+            <FaMapMarkerAlt size={24} />
+            <span>{contactInfo.location}</span>
+          </div>
+          <div className={styles.socialLinks}>
+            <a href={contactInfo.social.linkedin} target="_blank" rel="noopener noreferrer">
+              <FaLinkedin size={24} />
+            </a>
+            <a href={contactInfo.social.github} target="_blank" rel="noopener noreferrer">
+              <FaGithub size={24} />
+            </a>
+          </div>
         </div>
       </section>
     </div>
