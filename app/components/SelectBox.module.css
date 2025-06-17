@@ -1,0 +1,59 @@
+.selectContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.typingContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.icon {
+  font-size: 1.125rem;
+}
+
+.select {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 5px 0 25px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5em;
+  transition: all 0.3s ease;
+}
+
+.select:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.select:focus {
+  outline: none;
+  border-color: #4D6A2A;
+  box-shadow: 0 0 0 3px rgba(77, 106, 42, 0.2);
+}
+
+.select option {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 1rem;
+}
+
+.select option:disabled {
+  color: rgba(255, 255, 255, 0.6);
+} 

@@ -1,0 +1,64 @@
+.typingText {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: blink-caret 0.75s step-end infinite;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  text-shadow: inherit;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
+/* Estilos específicos para o ParallaxSpacer */
+:global(.spacer) .typingText,
+:global(.spacer) .typingText * {
+  font-family: 'Audiowide', cursive !important;
+  font-size: 4rem !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  :global(.spacer) .typingText,
+  :global(.spacer) .typingText * {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :global(.spacer) .typingText,
+  :global(.spacer) .typingText * {
+    font-size: 2.5rem !important;
+  }
+}
+
+#searchTriggerText {
+  font-size: 1.5rem;
+  font-family: 'Audiowide', cursive;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+} 
