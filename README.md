@@ -204,3 +204,120 @@ Leonardo do Nascimento - leonardovitaldonascimento@gmail.com
 
 LinkedIn: [Leonardo do Nascimento](https://www.linkedin.com/in/leonardo-vital-do-nascimento-6b682622a/)
 GitHub: [LeonardoNascimento23](https://github.com/LeonardoNascimento23)
+
+## Guia de Comandos Git
+
+### Comandos Básicos
+
+```bash
+# Verificar status do repositório
+git status
+
+# Adicionar arquivos ao stage
+git add <arquivo>          # Adiciona arquivo específico
+git add .                  # Adiciona todos os arquivos modificados
+git add app/components/*   # Adiciona todos os arquivos de um diretório
+
+# Criar commit
+git commit -m "mensagem"   # Cria commit com mensagem
+git commit -am "mensagem"  # Adiciona e commita em um único comando
+
+# Enviar alterações
+git push origin main      # Envia alterações para o repositório remoto
+git pull origin main      # Atualiza repositório local com alterações remotas
+
+# Verificar atualizações
+git fetch origin          # Busca atualizações do repositório remoto
+```
+
+### Boas Práticas
+
+1. **Commits**
+   - Use mensagens descritivas
+   - Siga o padrão: `tipo: descrição`
+   - Tipos comuns: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+
+2. **Branches**
+   - `main`: código em produção
+   - `develop`: desenvolvimento
+   - `feature/*`: novas funcionalidades
+   - `hotfix/*`: correções urgentes
+
+3. **Arquivos Não Rastreados (Untracked)**
+   - Sempre verifique com `git status`
+   - Adicione arquivos importantes ao Git
+   - Use `.gitignore` para arquivos desnecessários
+
+### Estrutura do Projeto
+
+```
+portifolio-leonardo-nascimento/
+├── app/
+│   ├── components/       # Componentes React
+│   ├── page.tsx         # Página principal
+│   └── page.module.css  # Estilos da página
+├── public/              # Arquivos estáticos
+└── README.md           # Este arquivo
+```
+
+### Dicas Importantes
+
+1. **Antes de Começar**
+   - Sempre faça `git pull` antes de começar a trabalhar
+   - Verifique se está na branch correta
+
+2. **Durante o Desenvolvimento**
+   - Faça commits frequentes e pequenos
+   - Mantenha mensagens claras e descritivas
+   - Verifique o status regularmente
+
+3. **Antes de Enviar**
+   - Teste suas alterações
+   - Verifique se não há conflitos
+   - Revise o código
+
+4. **Arquivos Sensíveis**
+   - Nunca comite senhas ou chaves
+   - Use variáveis de ambiente
+   - Mantenha o `.gitignore` atualizado
+
+### Comandos Úteis Adicionais
+
+```bash
+# Ver histórico de commits
+git log
+
+# Desfazer alterações
+git checkout -- <arquivo>  # Descarta alterações não commitadas
+git reset HEAD <arquivo>   # Remove do stage
+
+# Criar e mudar de branch
+git branch <nome>          # Cria nova branch
+git checkout <nome>        # Muda para a branch
+git checkout -b <nome>     # Cria e muda para nova branch
+
+# Mesclar branches
+git merge <branch>         # Mescla branch atual com a especificada
+```
+
+### Resolução de Problemas Comuns
+
+1. **Conflitos**
+   - Identifique os arquivos com conflito
+   - Resolva manualmente
+   - Adicione e comite as alterações
+
+2. **Commits Errados**
+   - Use `git reset` para desfazer
+   - Cuidado com `git push --force`
+
+3. **Arquivos Não Rastreados**
+   - Verifique se devem ser versionados
+   - Adicione ao `.gitignore` se necessário
+   - Use `git add` para arquivos importantes
+
+### Links Úteis
+
+- [Documentação Git](https://git-scm.com/doc)
+- [GitHub Flow](https://guides.github.com/introduction/flow/)
+- [Conventional Commits](https://www.conventionalcommits.org/)
